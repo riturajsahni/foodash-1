@@ -1,8 +1,7 @@
 import axios from 'axios';
 
 // Use full URL so it works regardless of proxy config
-const BASE_URL = process.env.REACT_APP_API_URL || 'http://localhost:5001/api';
-
+const BASE_URL = process.env.REACT_APP_API_URL || "https://foodash-backend-fxar.onrender.com/api";
 const API = axios.create({ baseURL: BASE_URL });
 
 API.interceptors.request.use(config => {
