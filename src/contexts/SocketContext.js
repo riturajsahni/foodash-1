@@ -10,6 +10,7 @@ export const SocketProvider = ({ children }) => {
   
  useEffect(() => {
   if (user) {
+    console.log("SOCKET FIXED BUILD");
     const SOCKET_URL = "https://foodash-backend-1-uuwg.onrender.com";
 
     socketRef.current = io(SOCKET_URL, {
