@@ -3,7 +3,7 @@ import axios from "axios";
 // ✅ Use ENV in production, fallback for safety
 const BASE_URL =
   process.env.REACT_APP_API_URL ||
-  "https://foodash-backend-fxar.onrender.com/api";
+  "https://foodash-backend-1-uuwg.onrender.com/api";
 
 // ✅ Axios instance
 const API = axios.create({
