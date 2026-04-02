@@ -1,17 +1,15 @@
 import axios from "axios";
 
-// ✅ Use ENV in production, fallback for safety
-const BASE_URL =
-  process.env.REACT_APP_API_URL ||
-  "https://foodash-backend-1-uuwg.onrender.com/api";
+// ✅ ONLY THIS (no env, no prefix)
+const BASE_URL = "https://foodash-backend-1-uuwg.onrender.com/api";
 
-// ✅ Axios instance
 const API = axios.create({
   baseURL: BASE_URL,
   headers: {
     "Content-Type": "application/json",
   },
 });
+
 
 // ✅ Attach token automatically
 API.interceptors.request.use((config) => {
