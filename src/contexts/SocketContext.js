@@ -7,12 +7,14 @@ const SocketContext = createContext(null);
 export const SocketProvider = ({ children }) => {
   const { user, restaurant } = useAuth();
   const socketRef = useRef(null);
+  
+ useEffect(() => {
+  if (user) {
+    const SOCKET_URL = "https://foodash-backend-1-uuwg.onrender.com";
 
-  useEffect(() => {
-    if (user) {
-      socketRef.current = io(process.env.REACT_APP_SOCKET_URL || 'http://localhost:5000', {
-        transports: ['websocket', 'polling']
-      });
+    socketRef.current = io(SOCKET_URL, {
+      transports: ['websocket', 'polling']
+    });
 
       socketRef.current.emit('join', {
         userId: user._id,
